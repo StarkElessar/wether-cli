@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { getArgs } from './helpers/args.js'
 import { printHelp } from './services/logService.js';
+import { saveKeyValue } from './services/storageService.js';
 
 const initCLI = () => {
   const args = getArgs(process.argv)
@@ -10,11 +11,10 @@ const initCLI = () => {
   }
 
   if (args.s) {
-    // Save city
   }
-
+  
   if (args.t) {
-    // Save token
+    saveKeyValue('token', args.t)
   }
 
   // Output weather
